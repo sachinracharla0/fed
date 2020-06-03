@@ -1,0 +1,18 @@
+.caption-title {
+    font-size: 90px;
+    color: #000000;
+}
+.btn-primary {
+    color: #000 !important;
+    background-color: #de7d1a !important;
+    border-color: #de7d1a !important;
+    border-radius: 0px;
+    padding: 5px 10px 5px 10px;
+    margin: 0px;
+}
+::ng-deep .caption-contact .btn-primary {
+    background-color: orange !important;
+    border-color: orange !important;
+    color:#FFFFFF !important;
+    font-size: 24px !important;
+}

@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+.container-home {
+    padding-right: 0%;
+    padding-left: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.right.carousel-control, .left.carousel-control {
+    opacity: 0;
+    filter:alpha(opacity=0); /* IE support */
+}
+.carousel-caption {
+    bottom:45%;
+    /* position: static; */
+}
+.carousel-indicators li {
+    height:20px;
+    width: 20px;
+    border:none;
+    border-radius: 50px;
+    color: #000000;
+    background-color: brown;
+}
+.carousel-indicators .active {
+    background-color: brown;
+}
+.caption {
+ position: absolute;
+    float: right;
+    bottom: 25px;
+    right: 25px;
+}
+.right.carousel-control, .left.carousel-control {
+    display: none;
+}
+.mt-10 {
+    padding-top: 20px;
+    margin:0px
+}
+.heading-color {
+    color:#a15b20;
+}
+.paragraph {
+    color: #000000;
+    font-weight: 500;
+    font-size: 17px;
+}
+.caption-contact {
+    padding: 10px 30px 10px 30px;
+    float: right;
+    border-radius: 10px;
+    color: #fff !important;
+    background-color: orange !important;
+    border-color: orange !important;
+}
+.column-padding {
+    margin-right: 0px;
+    padding-right: 0px;
+}
+ul {
+    color: #000000;
+    font-weight: 500;
+    font-size: 17px;
+}
+.modal-content {
+    border-radius: 35px;
+    background-color: #cccccc;
+}
+.modal-dialog {
+    margin-left: 54%;
+    margin-top: 15%;
+}
+.form-control{
+    background-color: #dddddd;
+}
+.modal-title {
+    margin: 0px auto;
+}
+.col {
+    max-width: 40%;
+}
+.form-group label {
+    font-size: 24px !important;
+    font-weight: 500;
+}

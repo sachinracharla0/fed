@@ -1,0 +1,144 @@
+<div class="container-home">
+  <carousel 
+          [noWrap]="noWrap"
+          [interval]="0">
+  <slide *ngFor="let slide of slides; let index=index" class="mx-auto">
+    
+    <img [src]="slide.src" alt="image slide" style="display: block; width: 100%;">
+ 
+    <div class="carousel-caption">
+      <h1 class="text-center caption-title">{{slide['heading']}}</h1>
+    </div>
+    <div class="caption">
+      <!-- (click)="goToDetailPage(slide['heading'])" -->
+      <a (click)="goToDetailPage(slide['heading'])" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Read More</a>
+    </div>
+  </slide>
+
+</carousel>
+
+<div class="row mt-10">
+  <div class="col-sm-9">
+  <h3 class="heading-color">
+    To the contrary
+  </h3>
+  <p class="paragraph">
+    Not only does a good army commander not need any special qualities, 
+    on the contrary he needs the absence of the highest and
+     best human attributes--love, poetry, tenderness, and philosophic inquiring doubt
+     On the contrary, even Christian theology makes at least the effort to show that the thought of God regulates the whole system of belief.
+  </p>
+  <ul>
+    <li> But the roll of the drums did not make.</li>
+    <li>Soldiers run in the direction</li>
+    </ul>
+  
+  </div>
+  <div class="col-sm-3 column-padding">
+    <div class="caption-contact" (click)="openModal(template)">
+      <a  class="btn btn-primary btn-lg active contact" role="button" aria-pressed="true">Contact US</a>
+    </div>
+  </div>
+
+</div>
+<div class="row mt-10">
+  <div class="col-sm-9">
+  <h3 class="heading-color">
+    Treatise
+  </h3>
+  <p class="paragraph">
+    But the roll of the drums did not make the looting soldiers run in the direction of the drum as formerly, but made them, on the contrary, run farther away.  
+  </p>
+  <ul>
+    <li> But the roll of the drums did not make.</li>
+    <li>Soldiers run in the direction</li>
+    </ul>
+  </div>
+  </div>
+  <ng-template #template>
+    <div class="modal-header">
+      <h3 class="modal-title pull-left heading-color">Contact Us</h3>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+
+      <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
+        <div class="col-sm-12 form-group form-inline">
+          <div class="col-sm-3">
+            <label>Name:</label>
+          </div>
+          <div class="col-sm-9">
+            <input name="activatedOn" type="text" formControlName="name" required class="form-control" placeholder="" />
+          </div>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+          class="alert alert-danger col-sm-12 text-center" style="margin-top:10px">
+      
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 2 characters long.
+        </div>
+      
+        </div>
+        </div>
+        <div class="col-sm-12 form-group form-inline">
+          <div class="col-sm-3">
+          <label>Email:</label>
+          </div>
+          <div class="col-sm-9">
+            <input name="activatedOn" type="text" formControlName="email" required class="form-control" placeholder="" />
+           </div>
+           <div *ngIf="email.invalid && (email.dirty || email.touched)"
+           class="alert alert-danger col-sm-12 text-center" style="margin-top:10px">
+       
+         <div *ngIf="email.errors.required">
+           Email is required.
+         </div>
+         <div *ngIf="email.errors.email">
+           Email is invalid.
+         </div>
+       
+         </div>
+        </div>
+       
+        <div class="col-sm-12 form-group">
+          <label>Comments:</label>
+            <textarea name="activatedOn" formControlName="comments" type="text" class="form-control" placeholder="" ></textarea>
+            <div *ngIf="comment.invalid && (comment.dirty || comment.touched)"
+            class="alert alert-danger col-sm-12 text-center" style="margin-top:10px">
+        
+          <div *ngIf="comment.errors.required">
+            Comment is required.
+          </div>
+          <div *ngIf="comment.errors.minlength">
+            Name must be at least 2 characters long.
+          </div>
+        
+          </div>
+        </div>
+        <br>
+        <div *ngIf="showMessage"
+        class="alert alert-success col-sm-12 text-center" style="margin-top:10px">
+        Thank you for contacting us. Will get back to you through mail.
+      </div>
+        <br />
+        <div class="container">
+          <div class="row">
+            <div class="col caption-contact">
+              <button class="btn btn-primary btn-lg active contact" style="font-size: 30px;
+              font-weight: 600;" (click)="closeForm()">Cancel</button></div>
+            <div class="col caption-contact" style="margin-left:20%">
+              <button id="btnSubmit"style="font-size: 30px;
+              font-weight: 600;" class="btn btn-primary btn-lg active contact" type="submit" [disabled]="!contactUsForm.valid" (click)="onSubmit()">Submit</button></div>
+          </div>
+        </div>
+        </form>
+    </div>
+  </ng-template>
+   
+</div>
+
