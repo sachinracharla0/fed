@@ -28,7 +28,9 @@ export class HomeFedComponent implements OnInit {
     },
     { updateOn: "blur" });
   }
-  public goToDetailPage(id): void {
+  public goToDetailPage(id, url): void {
+    localStorage.removeItem('image');
+    localStorage.setItem('image', url);
     this.router.navigate(['fedDetail', id])
   }
   public openModal(template: TemplateRef<any>):  void{

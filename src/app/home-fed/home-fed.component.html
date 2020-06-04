@@ -11,7 +11,7 @@
     </div>
     <div class="caption">
       <!-- (click)="goToDetailPage(slide['heading'])" -->
-      <a (click)="goToDetailPage(slide['heading'])" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Read More</a>
+      <a (click)="goToDetailPage(slide['heading'], slide['src'])" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Read More</a>
     </div>
   </slide>
 
@@ -58,7 +58,7 @@
   <ng-template #template>
     <div class="modal-header">
       <h3 class="modal-title pull-left heading-color">Contact Us</h3>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide();closeForm()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -130,7 +130,7 @@
           <div class="row">
             <div class="col caption-contact">
               <button class="btn btn-primary btn-lg active contact" style="font-size: 30px;
-              font-weight: 600;" (click)="closeForm()">Cancel</button></div>
+              font-weight: 600;" (click)="closeForm()" type="button">Cancel</button></div>
             <div class="col caption-contact" style="margin-left:20%">
               <button id="btnSubmit"style="font-size: 30px;
               font-weight: 600;" class="btn btn-primary btn-lg active contact" type="submit" [disabled]="!contactUsForm.valid" (click)="onSubmit()">Submit</button></div>
